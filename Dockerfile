@@ -71,7 +71,8 @@ RUN set -ex \
 	)" \
 	&& apk add --virtual .python-rundeps $runDeps \
 	&& apk add --no-cache openssh-client git make bash \
-	&& python3 -m pip install -U boto3 \
+	&& python3 -m pip install -U boto3 awscli \
+	&& pip2 install configparser \
 	&& apk del .build-deps \
 	&& rm -rf /usr/src/python ~/.cache
 
