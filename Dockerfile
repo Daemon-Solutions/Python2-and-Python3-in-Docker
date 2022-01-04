@@ -76,6 +76,8 @@ RUN set -ex \
 	&& apk del .build-deps \
 	&& rm -rf /usr/src/python ~/.cache
 
+COPY ./get_terraform.sh /usr/local/bin
+
 RUN ls -Fla /usr/local/bin/p* \
     && which python  && python -V \
     && which python2 && python2 -V \
